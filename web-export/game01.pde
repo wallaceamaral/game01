@@ -1,5 +1,11 @@
+//First version of the game01
+
 PImage bgCenario, arvore, nuvens;
+
 int posicNuvensX = -768;
+
+boolean playing = false;
+
 Maxim maxi;
 AudioPlayer player;
 
@@ -11,8 +17,6 @@ void setup() {
   arvore = loadImage("arvore.png");
   nuvens = loadImage("nuvens.png");
  
-
- 
   maxi = new Maxim(this);
   player = maxi.loadFile("mykbeat.wav");
 }
@@ -21,14 +25,22 @@ void draw(){
   image(bgCenario, -10, 0);
   image(nuvens, posicNuvensX, 0);
   image(arvore, -10, 0);
-  if(posicNuvensX>768){
-    posicNuvensX=-768;
+
+  if(posicNuvensX > 768){
+    posicNuvensX = -768;
   }
+
   posicNuvensX++;
 }
 
 void mousePressed(){
-  player.cue(0);
-  player.play();
+  playing = !playing;
+
+  if(playing){
+    player.cue(0);
+    player.play();
+  }else{
+    player.stop();
+  }
 }
 
