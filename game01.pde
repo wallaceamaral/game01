@@ -9,6 +9,7 @@ void setup() {
   cenario = new Imagem("bgCenario.png", -10, 0);
   nuvens  = new Imagem("nuvens.png", -1024, 0);
   arvore  = new Imagem("arvore.png", -10, 0); 
+  indio   = new Imagem("indio/indio", ".gif", 8, 40, 0);
 }
 
 void draw(){
@@ -16,6 +17,7 @@ void draw(){
   nuvens.display();
   arvore.display();
   nuvens.animateLoopX(1024);
+  indio.animateFrame(playing);
 }
 
 void mousePressed(){
