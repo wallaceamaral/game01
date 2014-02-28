@@ -6,21 +6,22 @@ void setup() {
   background(0,255,0);
   
   //define and create the objects
-  cenario = new Cenario();
-  nuvens  = new Nuvens();
-  arvore  = new Arvores(); 
+  cenario = new Imagem("bgCenario.png", -10, 0);
+  nuvens  = new Imagem("nuvens.png", -1024, 0);
+  arvore  = new Imagem("arvore.png", -10, 0); 
 }
 
 void draw(){
   cenario.display();
   nuvens.display();
   arvore.display();
+  nuvens.animateLoopX(1024);
 }
 
 void mousePressed(){
   playing = !playing;
 
-  cenario.playSound(playing);
+  //cenario.playSound(playing);
 }
 class Arvores{
   PImage arvores;
@@ -63,7 +64,32 @@ class Cenario{
     }
   }
 }
-class Nuvens{
+ class Imagem{
+  //attributes
+  PImage imagem;
+  int positionX, positionY;
+
+  //constructor
+  Imagem(String arquivo, int x, int y){
+    imagem    = loadImage(arquivo);
+    positionX = x;
+    positionY = y;
+  }
+
+  //methods
+  void display(){
+    image(imagem, positionX, positionY);
+  }
+
+  void animateLoopX(int deslocX){
+    if(positionX > deslocX){
+      positionX = -deslocX;
+    }
+    positionX++;
+  }
+  
+}
+/*class Nuvens{
   PImage nuvens;
   int posicNuvensX = -768;
   
@@ -75,11 +101,12 @@ class Nuvens{
   //draw this object
   void display(){
     image(nuvens, posicNuvensX, 0);
-  
     if(posicNuvensX > 768){
       posicNuvensX = -768;
     }
-    posicNuvensX++; 
+    //posicNuvensX++; 
   }
 }
+}
+*/
 
