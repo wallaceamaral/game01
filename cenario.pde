@@ -8,7 +8,7 @@ class Cenario{
     bgCenario = loadImage("bgCenario.png");
    
      maxi = new Maxim(this);
-     player = maxi.loadFile("mykbeat.wav");
+     player = maxi.loadFile("FLORESTA_bg.wav");
   }
  
  //draw this object
