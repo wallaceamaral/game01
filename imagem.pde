@@ -1,13 +1,14 @@
  class Imagem{
   //attributes
   PImage imagem;
-  int positionX, positionY;
+  int positionX, positionY, initialPosition;
 
   //constructor
   Imagem(String arquivo, int x, int y){
     imagem    = loadImage(arquivo);
     positionX = x;
     positionY = y;
+    initialPosition = positionX;
   }
 
   //methods
@@ -17,9 +18,15 @@
 
   void animateLoopX(int deslocX){
     if(positionX > deslocX){
-      positionX = -deslocX;
+      positionX = initialPosition;
     }
     positionX++;
   }
   
+  //#TODO: implement this methods
+  /*void animatePositionX(int deslocX){
+    while(positionX < deslocX){
+      positionX++;
+    }
+  }*/ 
 }
