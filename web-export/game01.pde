@@ -30,17 +30,12 @@ void draw(){
   indio.animateFrame(playingTambor);
   floresta.play();
 }
-/*
-void mousePressed(){
-  playing = !playing;
 
-  som.playSound(playing); 
-}*/
 
 void mouseReleased(){
   //Dispara som do tambor
   if ( mouseX>500 && mouseX<575 && mouseY>400 && mouseY<610) {
-    if(!playing){
+    if(!playingTambor){
       tambor.cue(0);
       tambor.setLooping(true); 
       tambor.play();
@@ -58,53 +53,11 @@ void mouseReleased(){
     if(!playing){
       somArvore.cue(0); 
       somArvore.play();
+      playing = !playing;
     }
     else{
       somArvore.stop();
-    }
-  }
-  
-  
-  playing = !playing;
-}
-class Arvores{
-  PImage arvores;
-  
-  //constructor
-  Arvores(){
-    arvores = loadImage("arvore.png");
-  }
-  
-  //draw this object
-  void display(){
-    image(arvores, -10, 0);
-  }
-}
-class Cenario{
-  PImage bgCenario;
-  Maxim maxi;
-  AudioPlayer player;
-  
-  //constuctor
-  Cenario(){
-    bgCenario = loadImage("bgCenario.png");
-   
-     maxi = new Maxim(this);
-     player = maxi.loadFile("FLORESTA_bg.wav");
-  }
- 
- //draw this object
-  void display(){
-    image(bgCenario, -10, 0);
-  }
-  
- //play the music
-  void playSound(boolean playing){
-    if(playing){
-      player.cue(0);
-      player.play();
-    }else{
-      player.stop();
+      playing = !playing;
     }
   }
 }
@@ -206,24 +159,5 @@ PImage [] loadImages(String stub, String extension, int numImages)
     }
   }
   return images;
-}
-class Nuvens{
-  PImage nuvens;
-  int posicNuvensX = -768;
-  
-  //constructor
-  Nuvens(){
-    nuvens = loadImage("nuvens.png");
-  }
-  
-  //draw this object
-  void display(){
-    image(nuvens, posicNuvensX, 0);
-  
-    if(posicNuvensX > 768){
-      posicNuvensX = -768;
-    }
-    posicNuvensX++; 
-  }
 }
 

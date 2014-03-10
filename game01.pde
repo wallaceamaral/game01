@@ -30,17 +30,12 @@ void draw(){
   indio.animateFrame(playingTambor);
   floresta.play();
 }
-/*
-void mousePressed(){
-  playing = !playing;
 
-  som.playSound(playing); 
-}*/
 
 void mouseReleased(){
   //Dispara som do tambor
   if ( mouseX>500 && mouseX<575 && mouseY>400 && mouseY<610) {
-    if(!playing){
+    if(!playingTambor){
       tambor.cue(0);
       tambor.setLooping(true); 
       tambor.play();
@@ -58,12 +53,11 @@ void mouseReleased(){
     if(!playing){
       somArvore.cue(0); 
       somArvore.play();
+      playing = !playing;
     }
     else{
       somArvore.stop();
+      playing = !playing;
     }
   }
-  
-  
-  playing = !playing;
 }
