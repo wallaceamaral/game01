@@ -12,7 +12,7 @@ void setup() {
   cenario = new Imagem("bgCenario.png", -10, 0);
   nuvens  = new Imagem("nuvens.png", -1024, 0);
   arvore  = new Imagem("arvore.png", -10, 0); 
-  indio   = new Imagem("indio/indio", ".gif", 8, 500, 400);
+  indio   = new Imagem("indio/indio", ".png", 2, 350, 350);
   
   //TODO: criar a classe Som para isolar a lógica;
   maxi = new Maxim(this);
