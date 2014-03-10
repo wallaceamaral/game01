@@ -16,9 +16,9 @@ void setup() {
   
   //TODO: criar a classe Som para isolar a lógica;
   maxi = new Maxim(this);
-  floresta = maxi.loadFile("FLORESTA_bg.wav");
-  somArvore = maxi.loadFile("ARVORE.wav");
-  tambor = maxi.loadFile("TAMBOR_INDIO.wav");
+  floresta = maxi.loadFile("FLORESTA_bg.mp3");
+  somArvore = maxi.loadFile("ARVORE.mp3");
+  tambor = maxi.loadFile("TAMBOR_INDIO.mp3");
   
 }
 
