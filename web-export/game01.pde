@@ -13,6 +13,7 @@ void setup() {
   nuvens  = new Imagem("nuvens.png", -1024, 0);
   arvore  = new Imagem("arvore.png", -10, 0); 
   indio   = new Imagem("indio/indio", ".png", 2, 350, 350);
+  oca     = new Imagem("oca.png", 0, 0);
   
   //TODO: criar a classe Som para isolar a lógica;
   maxi = new Maxim(this);
@@ -29,6 +30,7 @@ void draw(){
   nuvens.animateLoopX(1024);
   indio.animateFrame(playingTambor);
   floresta.play();
+  oca.display();
 }
 
 
