@@ -31,7 +31,7 @@ void draw(){
   oca.display();
 
   nuvens.animateLoopX(1024);
-  indio.animateFrame(playingTambor);
+  indio.animateFrame(playingTambor, 10);
 
   somFloresta.play();
   somFloresta.setLooping(true);
@@ -73,6 +73,7 @@ void mouseReleased(){
   PImage [] imagens;
   int positionX, positionY, initialPosition;
   int currentPosition = 0;
+  int contVelocidade = 0;
 
   //constructor
   Imagem(String arquivo, int x, int y){
@@ -118,14 +119,19 @@ void mouseReleased(){
 
 
   //animations frame to frame
-  void animateFrame(boolean playing){
+  void animateFrame(boolean playing, int velocidade){
     this.display(imagens);
 
     if(playing){
-      currentPosition += 1;
+      contVelocidade++;
+      
+      
+      if(contVelocidade % velocidade == 0){
+        currentPosition += 1;
  
-      if(currentPosition >= imagens.length){
-        currentPosition = 0;
+        if(currentPosition >= imagens.length){
+          currentPosition = 0;
+        } 
       }
     }
   }

@@ -31,7 +31,7 @@ void draw(){
   oca.display();
 
   nuvens.animateLoopX(1024);
-  indio.animateFrame(playingTambor);
+  indio.animateFrame(playingTambor, 10);
 
   somFloresta.play();
   somFloresta.setLooping(true);
