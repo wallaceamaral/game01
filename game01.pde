@@ -15,6 +15,7 @@ void setup() {
   arvore  = new Imagem("arvore.png", -10, 0); 
   indio   = new Imagem("indio/indio", ".png", 2, 0, 0);
   oca     = new Imagem("oca.png", 0, 0);
+  onda    = new Imagem("onda/ONDA", ".png", 4, 0, 0);
   
   //define and create the audio objects
   maxi = new Maxim(this);
@@ -32,6 +33,7 @@ void draw(){
 
   nuvens.animateLoopX(1024);
   indio.animateFrame(playingTambor, 10);
+  onda.animateFrame(true, 10);
 
   somFloresta.play();
   somFloresta.setLooping(true);
