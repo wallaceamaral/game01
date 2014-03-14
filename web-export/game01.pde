@@ -16,6 +16,8 @@ void setup() {
   indio   = new Imagem("indio/indio", ".png", 2, 0, 0);
   oca     = new Imagem("oca.png", 0, 0);
   onda    = new Imagem("onda/ONDA", ".png", 4, 0, 0);
+  agua    = new Imagem("agua/agua", ".png", 7, 0, 0);
+  sol     = new Imagem("sol/sol", ".png", 5, 0, 0);
   
   //define and create the audio objects
   maxi = new Maxim(this);
@@ -27,13 +29,16 @@ void setup() {
 
 void draw(){
   cenario.display();
+  sol.animateFrame(true, 70);
   nuvens.display();
   arvore.display();
   oca.display();
 
+  
   nuvens.animateLoopX(1024);
   indio.animateFrame(playingTambor, 10);
-  onda.animateFrame(true, 10);
+  onda.animateFrame(true, 40);
+  agua.animateFrame(true, 40);
 
   somFloresta.play();
   somFloresta.setLooping(true);
